@@ -14,6 +14,7 @@ public class PageObjectModel {
 	   public static void main(String[] args) {
 	 
 	     driver = new FirefoxDriver();
+	     driver.manage().window().maximize();
 	 
 	     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	 
@@ -22,6 +23,7 @@ public class PageObjectModel {
 	     // Use page Object library now
 	 
 	     Home_Page.lnk_MyAccount(driver).click();
+	     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	 
 	     LogIn_Page.txtbx_UserName(driver).sendKeys("testuser_1");
 	 
@@ -30,6 +32,7 @@ public class PageObjectModel {
 	     LogIn_Page.btn_LogIn(driver).click();
 	 
 	     System.out.println(" Login Successfully, now it is the time to Log Off buddy.");
+	     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	 
 	     Home_Page.lnk_LogOut(driver).click(); 
 	 
